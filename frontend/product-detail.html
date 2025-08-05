@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Car Details</title> <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/product-detail.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Car Sales System</div> <ul>
+                <li><a href="index.html">Home</a></li> <li><a href="contact.html">Contact Us</a></li> <li><a href="login.html">Login</a></li> <li><a href="register.html">Register</a></li> <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li> <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li> </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-detail-hero">
+            <img id="detailHeroImage" src="images/placeholder.jpg" alt="Car Image" class="product-hero-image">
+            <div class="hero-overlay"></div>
+            <div class="product-hero-content">
+                <h1 id="detailName">Car Name</h1> <p id="detailSeries" class="product-series">Car Series</p> <div class="product-actions">
+                    <button id="contactConsultationBtn" class="btn">Contact for Consultation</button> </div>
+                <div class="product-specs">
+                    <div>
+                        <span class="spec-label">Price from</span> <p id="detailPrice" class="spec-value">Updating...</p> </div>
+                    <div>
+                        <span class="spec-label">Fuel Type</span> <p id="detailFuelType" class="spec-value">Updating...</p> </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-additional-info">
+            <h2>Detailed Description</h2> <p id="detailDescription">Loading description...</p> <h3>Technical Specifications</h3> <ul id="detailSpecsList">
+                <li><strong>Year:</strong> <span id="specYear"></span></li> <li><strong>Condition:</strong> <span id="specStock"></span></li> </ul>
+            <div class="btn-center">
+                <button id="detailPageAddToCartBtn" class="btn">Add to Cart</button> </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Car Sales Management System. All rights reserved.</p> </footer>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/product-detail.js"></script>
+</body>
+</html>

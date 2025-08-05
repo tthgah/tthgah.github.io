@@ -1,0 +1,499 @@
+/* Trong style.css, thêm vào đầu file hoặc trong body */
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d; /* Màu xám, xem xét đổi sang màu đậm hơn của primary cho hover */
+    --text-color: #333;
+    --bg-color: #f8f9fa;
+    --header-bg: #343a40;
+    --header-text: #fff;
+    --border-color: #ddd;
+    /* Định nghĩa biến màu RGB nếu bạn muốn dùng trong rgba() */
+    --primary-color-rgb: 0, 123, 255;
+    /* Thêm một biến cho màu hover của primary để dễ quản lý */
+    --primary-dark-hover: #0056b3; /* Màu xanh đậm hơn cho hover */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.2);
+    --shadow-heavy: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header & Navigation */
+header {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--header-text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Buttons (General purpose .btn - for smaller buttons or those not in main forms) */
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Thêm transition cho shadow và transform */
+    box-shadow: 0 2px 4px var(--shadow-light); /* Shadow nhẹ cho nút chung */
+}
+
+.btn:hover {
+    background: var(--primary-dark-hover); /* Sử dụng biến cho màu hover */
+    transform: translateY(-2px); /* Nâng nhẹ nút */
+    box-shadow: 0 4px 8px var(--shadow-medium); /* Shadow đậm hơn khi hover */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    padding: 175px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 580px;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    filter: brightness(0.7);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+/* Đảm bảo nội dung chữ nằm trên overlay và video */
+.hero h1,
+.hero p,
+.hero .btn {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+/* Featured Cars */
+.featured-cars {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.featured-cars h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.featured-cars > div { /* Grid for car cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.car-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.car-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.car-card p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.btn-add-to-cart {
+    background: #28a745; /* Green */
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-add-to-cart:hover {
+    background: #218838; /* Darker green */
+}
+
+/* Footer */
+footer {
+    background: var(--header-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 30px;
+}
+
+/* Basic page padding for main content */
+main {
+    padding: 20px 0;
+    min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
+}
+
+/* Profile Page */
+#profileInfo {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+#profileInfo p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+#profileInfo p strong {
+    color: var(--primary-color);
+}
+
+#logoutBtn {
+    margin-top: 20px;
+    background: var(--secondary-color);
+}
+
+#logoutBtn:hover {
+    background: #5a6268;
+}
+
+/* Cart Page */
+#cartItems .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: #fdfdfd;
+}
+
+#cartItems .cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+#cartItems .item-details h4 {
+    margin: 0 0 5px 0;
+    color: var(--primary-color);
+}
+
+#cartItems .item-details p {
+    margin: 0;
+    color: #555;
+}
+
+.cart-summary {
+    text-align: right;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.cart-summary h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.cart-summary .btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+.btn-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+}
+.search-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Thêm khoảng cách nếu cần, nhưng gap trong form đã xử lý */
+}
+.search-section input {
+    width: 60%;
+    max-width: 400px;
+    padding: 12px 10px; /* Tăng padding để khớp với các input khác */
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box; /* Quan trọng */
+    font-size: 1rem; /* Đảm bảo font size đồng nhất */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.search-section input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(var(--primary-color-rgb), 0.2);
+    outline: none;
+}
+
+
+/* Thêm style cho icon trong nav */
+nav ul li a i {
+    margin-right: 5px; /* Khoảng cách giữa icon và chữ */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Ẩn modal mặc định */
+    position: fixed; /* Giữ vị trí */
+    z-index: 1000; /* Đặt trên cùng */
+    left: 0;
+    top: 0;
+    width: 100%; /* Chiều rộng đầy đủ */
+    height: 100%; /* Chiều cao đầy đủ */
+    overflow: auto; /* Cho phép cuộn nếu nội dung lớn */
+    background-color: rgba(0,0,0,0.7); /* Nền tối mờ */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% từ trên xuống và căn giữa */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Chiều rộng của modal */
+    max-width: 900px; /* Chiều rộng tối đa */
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* New button styles for primary actions */
+/* Nút "Liên hệ với chúng tôi" trong phần "Về Chúng Tôi" */
+.about-us-contact-btn {
+    display: inline-block; /* Hoặc block nếu bạn muốn nó chiếm toàn bộ chiều rộng */
+    padding: 15px 30px; /* Kích thước nút lớn hơn */
+    background-color: var(--primary-color);
+    color: var(--header-text); /* Sử dụng header-text cho màu chữ trắng */
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 10px var(--shadow-medium); /* Shadow nổi bật hơn */
+    margin-top: 20px; /* Khoảng cách với text phía trên */
+}
+
+.about-us-contact-btn:hover {
+    background-color: var(--primary-dark-hover);
+    transform: translateY(-3px); /* Nâng cao hơn */
+    box-shadow: 0 8px 15px var(--shadow-heavy); /* Shadow đậm hơn khi hover */
+}
+
+/* Cần đảm bảo `.about-us` có text-align: center để căn giữa nút nếu nó là inline-block */
+.about-us {
+    text-align: center; /* Để nút "Liên hệ với chúng tôi" căn giữa */
+    padding: 60px 20px;
+    background-color: var(--white-color); /* Bạn chưa định nghĩa --white-color */
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+/* Trong frontend/css/style.css */
+
+/* ... (giữ nguyên các style hiện có của bạn) ... */
+
+/* Style cho nút "Khám phá các mẫu xe" trong Hero Section */
+.hero-explore-button {
+    display: inline-block;
+    padding: 18px 40px; /* Kích thước lớn hơn cho nút hero */
+    background-color: var(--primary-color);
+    color: var(--header-text); /* Màu chữ trắng */
+    text-decoration: none;
+    border-radius: 8px; /* Bo góc */
+    font-size: 1.3rem; /* Font lớn */
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(var(--primary-color-rgb), 0.4); /* Shadow nổi bật, dùng biến primary-color-rgb */
+    margin-top: 30px; /* Khoảng cách với text phía trên */
+    /* Có thể thêm animation nếu muốn */
+    animation: pulse 1.5s infinite ease-in-out; /* Ví dụ thêm animation nhịp đập */
+}
+
+.hero-explore-button:hover {
+    background-color: var(--primary-dark-hover); /* Màu đậm hơn khi hover */
+    transform: translateY(-4px); /* Nâng cao hơn khi hover */
+    box-shadow: 0 10px 25px rgba(var(--primary-color-rgb), 0.5); /* Shadow đậm hơn nhiều */
+}
+
+/* Keyframes cho animation pulse nếu bạn sử dụng */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 6px 15px rgba(var(--primary-color-rgb), 0.4);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 6px 15px rgba(var(--primary-color-rgb), 0.4);
+    }
+}
+
+/* Đảm bảo phần hero-video và hero-overlay có z-index thấp hơn nút */
+/* Đã được xử lý trong style.css trước đó với z-index: 1 cho nội dung hero */
+
+/* ... (các style khác của bạn) ... */

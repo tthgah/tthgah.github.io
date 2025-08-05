@@ -1,0 +1,219 @@
+/* Styles cho product-detail.html */
+
+.product-detail-hero {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: left; /* Căn trái theo ví dụ */
+    padding: 80px 40px; /* Điều chỉnh padding theo nhu cầu */
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Đẩy nội dung xuống dưới cùng để tạo hiệu ứng hero */
+    min-height: 550px; /* Đặt chiều cao lớn như một phần hero */
+}
+
+.product-hero-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    filter: brightness(0.7) blur(1px); /* Hơi tối và làm mờ một chút để tạo hiệu ứng */
+    object-fit: cover; /* Đảm bảo hình ảnh bao phủ toàn bộ khu vực */
+}
+
+.product-detail-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 100%); /* Lớp phủ gradient */
+    z-index: 0;
+}
+
+.product-hero-content {
+    position: relative;
+    z-index: 1; /* Nội dung nằm trên lớp phủ */
+    max-width: 600px; /* Giới hạn chiều rộng nội dung */
+    margin-right: auto; /* Đẩy nội dung sang trái */
+}
+
+.product-hero-content h1 {
+    font-size: 4rem; /* Kích thước font lớn cho tên xe */
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    line-height: 1.1;
+}
+
+.product-hero-content .product-series {
+    font-size: 1.8rem;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.product-actions {
+    display: flex;
+    gap: 15px; /* Khoảng cách giữa các nút */
+    margin-bottom: 40px;
+}
+
+.product-actions .btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    min-width: 180px; /* Đảm bảo các nút có chiều rộng tối thiểu nhất quán */
+    justify-content: center; /* Căn giữa chữ trong nút */
+}
+
+.product-actions .btn.secondary-btn {
+    background: rgba(108, 117, 125, 0.7); /* Màu phụ mờ */
+    border: 1px solid var(--secondary-color);
+    color: #fff;
+}
+
+.product-actions .btn.secondary-btn:hover {
+    background: var(--secondary-color);
+}
+
+.product-specs {
+    display: flex;
+    gap: 50px; /* Khoảng cách giữa các khối thông số */
+    margin-top: 50px;
+}
+
+.product-specs div {
+    text-align: left;
+}
+
+.product-specs .spec-label {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.product-specs .spec-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Phần Thông tin bổ sung */
+.product-additional-info {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.product-additional-info h2,
+.product-additional-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.product-additional-info h3 {
+    margin-top: 30px;
+    font-size: 1.8rem;
+}
+
+.product-additional-info p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.product-additional-info ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.product-additional-info ul li {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.product-additional-info ul li strong {
+    color: var(--primary-color);
+}
+
+/* Điều chỉnh responsive cho product-detail.html */
+@media (max-width: 768px) {
+    .product-detail-hero {
+        padding: 60px 20px;
+        min-height: 450px;
+        text-align: center;
+        align-items: center; /* Căn giữa nội dung trên màn hình nhỏ hơn */
+    }
+
+    .product-hero-content {
+        max-width: 100%;
+        margin: 0 auto; /* Căn giữa nội dung theo chiều ngang */
+    }
+
+    .product-hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .product-hero-content .product-series {
+        font-size: 1.5rem;
+    }
+
+    .product-actions {
+        flex-direction: column; /* Xếp chồng các nút theo chiều dọc */
+        align-items: center;
+        width: 100%;
+    }
+
+    .product-actions .btn {
+        width: 80%; /* Làm các nút rộng hơn */
+        max-width: 300px;
+    }
+
+    .product-specs {
+        flex-direction: column; /* Xếp chồng các thông số theo chiều dọc */
+        gap: 20px;
+        align-items: center;
+    }
+
+    .product-additional-info {
+        padding: 30px 15px;
+    }
+
+    .product-additional-info h2,
+    .product-additional-info h3 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .product-hero-content .product-series {
+        font-size: 1.2rem;
+    }
+
+    .product-specs .spec-value {
+        font-size: 1.5rem;
+    }
+}
